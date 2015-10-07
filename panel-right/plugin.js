@@ -21,6 +21,11 @@ define(function(require, exports, module) {
 
         function syncSize () {
             var iframe = plugin.container.querySelector("IFRAME.devcomp-iframe");
+            // If the width is '0' we re-sync every so often until we get a positive value once.
+            if (plugin.container.clientWidth === 0) {
+                setTimeout(syncSize, 500);
+                return;
+            }
             iframe.width = plugin.container.clientWidth + "px";
             iframe.height = plugin.container.clientHeight + "px";
         }
