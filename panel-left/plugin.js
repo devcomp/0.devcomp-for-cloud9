@@ -19,15 +19,6 @@ define(function(require, exports, module) {
         });
 
 
-
-        settings.on("read", function() {
-            settings.setDefaults("project/devcomp-panel-left", [
-                ["url", "http://127.0.0.1:8090/test-10CB0D92-C011-4288-90D6-1A0978DCBF0A/Tests/"]
-            ]);
-        }, plugin);
-
-
-
         function syncSize () {
             var iframe = plugin.container.querySelector("IFRAME.devcomp-iframe");
             iframe.width = plugin.container.clientWidth + "px";
@@ -48,7 +39,7 @@ define(function(require, exports, module) {
 
             ui.insertCss(require("text!../panel.css"), options.staticPrefix, plugin);
 
-            e.html.innerHTML = '<iframe class="devcomp-iframe" src="http://127.0.0.1:8090/test-10CB0D92-C011-4288-90D6-1A0978DCBF0A/Tests/"></iframe>';
+            e.html.innerHTML = '<iframe class="devcomp-iframe" src="' + settings.get("project/devcomp-panel-left/@url") + '"></iframe>';
         });
 
         return plugin;
