@@ -49,7 +49,7 @@ define("plugins/0.devcomp-for-cloud9/panel-left/plugin",[], function(require, ex
 
             ui.insertCss(require("text!../panel.css"), options.staticPrefix, plugin);
 
-            e.html.innerHTML = '<iframe class="devcomp-iframe" src="' + settings.get("project/devcomp-panel-left/@url") + '"></iframe>';
+            e.html.innerHTML = '<iframe class="devcomp-iframe" src="' + settings.get("project/0.devcomp-panel-left/@url") + '"></iframe>';
         });
 
         return plugin;
@@ -100,7 +100,7 @@ define("plugins/0.devcomp-for-cloud9/panel-right/plugin",[], function(require, e
 
             ui.insertCss(require("text!../panel.css"), options.staticPrefix, plugin);
 
-            e.html.innerHTML = '<iframe class="devcomp-iframe" src="' + settings.get("project/devcomp-panel-right/@url") + '"></iframe>';
+            e.html.innerHTML = '<iframe class="devcomp-iframe" src="' + settings.get("project/0.devcomp-panel-right/@url") + '"></iframe>';
         });
 
         return plugin;

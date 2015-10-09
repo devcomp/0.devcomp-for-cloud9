@@ -44,7 +44,7 @@ define(function(require, exports, module) {
 
             ui.insertCss(require("text!../panel.css"), options.staticPrefix, plugin);
 
-            e.html.innerHTML = '<iframe class="devcomp-iframe" src="' + settings.get("project/devcomp-panel-left/@url") + '"></iframe>';
+            e.html.innerHTML = '<iframe class="devcomp-iframe" src="' + settings.get("project/0.devcomp-panel-left/@url") + '"></iframe>';
         });
 
         return plugin;
