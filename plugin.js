@@ -3,8 +3,8 @@ define(function(require, exports, module) {
 
     main.consumes = ["Panel", "ui", "panels", "commands", "settings"];
     main.provides = [
-        "devcomp-panel-left",
-        "devcomp-panel-right"
+        "0.devcomp-panel-left",
+        "0.devcomp-panel-right"
     ];
 
     return main;
@@ -13,8 +13,8 @@ define(function(require, exports, module) {
 
 
         register("", {
-            "devcomp-panel-left": require("./panel-left/plugin")(options, imports),
-            "devcomp-panel-right": require("./panel-right/plugin")(options, imports)
+            "0.devcomp-panel-left": require("./panel-left/plugin")(options, imports),
+            "0.devcomp-panel-right": require("./panel-right/plugin")(options, imports)
         });
     }
 
