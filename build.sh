@@ -10,7 +10,6 @@ function init {
 	BO_deriveSelfDir ___TMP___ "$BO_SELF_BASH_SOURCE"
 	local __BO_DIR__="$___TMP___"
 
-    BO_sourcePrototype "$__BO_DIR__/../../../../scripts/activate.sh"
 
     C9_COMMAND_PATH="$__BO_DIR__/../../../../.cache/git/github.com/cadorn/core/bin/c9"
 
@@ -20,7 +19,9 @@ function init {
 
 		pushd "$__BO_DIR__" > /dev/null
 
-		    "$C9_COMMAND_PATH" build
+			if BO_has "$C9_COMMAND_PATH"; then
+			    "$C9_COMMAND_PATH" build
+			fi
 
 		popd > /dev/null
 
